@@ -1,0 +1,12 @@
+APP:
+  HOST: 'poquis.vtr.cl'
+  PORT: 3078
+  BASE_PATH: 'v1/manageDevice'
+
+  DEBUG: ''
+
+  LOGGER:
+    LEVEL: error
+  SOA:
+    URL_LOCK_DEVICE: 'http://osbcorpdesa.vtr.cl:8000/desbloquearDispositivo?wsdl'
+    URL_GET_SERIAL_NUMBER: 'http://osbcorpdesa.vtr.cl:8000/something'

@@ -1,0 +1,8 @@
+lockUnlockResponse:
+  title: LOCK UNLOCK Response
+  type: object
+  properties:
+    code:
+      type: integer
+    body:
+      type: object

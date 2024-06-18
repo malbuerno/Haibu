@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: Lock / Unlock Decoder 
+  description: >-
+    Lock / Unlock Decoder 
+  contact:
+    name: victor@haibu.cl
+  license:
+    name: MIT
+basePath: /v1/manageDevice
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+definitions:
+security:
+  - api_key: []
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
