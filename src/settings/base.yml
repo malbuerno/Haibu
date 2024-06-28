@@ -1,0 +1,26 @@
+APP:
+  SERVICE_NAME: 'getFTTHData'
+
+  LOGGER:
+    LEVEL: debug
+  SOA:
+    BASE_URL: "http://172.17.225.47:8000/consultarLocalidadHub?wsdl"
+    # BASE_URL: "http://osbcorpqa.vtr.cl:8000/consultarLocalidadHub?wsdl"
+    CONSULTAR_CPS: "http://172.17.225.47:8000/consultarCPESporClienteConvergente?wsdl"
+    # CONSULTAR_CPS: "http://osbcorpqa.vtr.cl:8000/consultarCPESporClienteConvergente?wsdl"
+    CONSULTAR_IFO_AAA: "http://172.17.225.47:8000/consultaInformacionAaa?wsdl"
+    # CONSULTAR_IFO_AAA: "http://osbcorpqa.vtr.cl:8000/consultaInformacionAaa?wsdl"
+    CONSULTAR_IFO_APC: "http://172.17.225.47:8000/consultaInformacionApc?wsdl"
+    # CONSULTAR_IFO_APC: "http://osbcorpqa.vtr.cl:8000/consultaInformacionApc?wsdl"
+    CONSULTAR_GIAP: "http://laisla.vtr.cl:7000/BECBackend/getRespuestaGIAP.json/"
+    # CONSULTAR_GIAP: "http://laisla.vtr.cl:7000/BECBackend/getRespuestaGIAP.json/"
+    GET_SERVICE_AMS: "http://172.17.225.47:8000/obtenerDatosAMS?wsdl"
+    # GET_SERVICE_AMS: "http://osbcorpqa.vtr.cl:8000/obtenerDatosAMS?wsdl"
+    GET_SERVICE_ENC: "http://172.17.225.47:8000/obtenerDatosENC?wsdl"
+    # GET_SERVICE_ENC: "http://osbcorpqa.vtr.cl:8000/obtenerDatosENC?wsdl"
+    GET_ACTIVOS_SIEBEL: "http://172.17.225.47:8000/consultaActivosInstaladosSiebel?wsdl"
+    # GET_ACTIVOS_SIEBEL: "http://osbcorpqa.vtr.cl:8000/consultaActivosInstaladosSiebel?wsdl"
+  BD:
+    USERDB: 'BEC_ANDES'
+    USERPASS: 'B3c4nd3s2019'
+    CONNECTSTRING: '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=larancagua.vtr.cl)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SID=becqa)))'

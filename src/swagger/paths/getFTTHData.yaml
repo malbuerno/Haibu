@@ -1,0 +1,69 @@
+/consultarPlataformaGiapClaroVTR:
+  get:
+    description: "Obtiene data desde plataforma giap AAA y APC"
+    operationId: "consultarPlataformaGiapClaroVTR"
+    produces:
+      - "application/json"
+    tags:
+      - consultarPlataformaGiapClaroVTR
+    x-oai-middleware:
+      - file: controller
+        handler: consultarPlataformaGiapClaroVTR
+    parameters:
+      - name: rut
+        in: header
+        description: rut a consultar.
+        required: true
+        type: string
+    responses:
+      200:
+        description: Operation successful
+        schema:
+          $ref: "#/definitions/consultarClaroVTRResponse"
+      404:
+        description: Error operation
+        schema:
+          $ref: "#/definitions/error"
+
+/consultaDummyDB:
+  get:
+    description: "Consulta Dummy Dispositivos MTA"
+    operationId: "solicitudDummyDB"
+    produces:
+      - "application/json"
+    tags:
+      - solicitudDummyDB
+    x-oai-middleware:
+      - file: controller
+        handler: solicitudDummyDB
+    responses:
+      200:
+        description: Operation successful
+        schema:
+          $ref: "#/definitions/consultarClaroVTRResponse"
+      404:
+        description: Error operation
+        schema:
+          $ref: "#/definitions/error"
+
+/insertarTrazaDesbloqueo:
+  post:
+    description: "Insertar Traza de Bloqueo DBOX"
+    operationId: "insertarTrazaDesbloqueo"
+    produces:
+      - "application/json"
+    tags:
+      - insertarTrazaDesbloqueo
+    x-oai-middleware:
+      - file: controller
+        handler: insertarTrazaDesbloqueo
+    responses:
+      200:
+        description: Operation successful
+        schema:
+          $ref: "#/definitions/consultarClaroVTRResponse"
+      404:
+        description: Error operation
+        schema:
+          $ref: "#/definitions/error"
+

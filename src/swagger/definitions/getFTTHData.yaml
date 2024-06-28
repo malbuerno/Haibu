@@ -1,0 +1,3 @@
+consultarClaroVTRResponse:
+  title: respuesta plataforma
+  type: object
