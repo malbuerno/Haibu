@@ -1,0 +1,12 @@
+consultaEstadoONTRequest:
+  title: Consulta Estado Set Top Box Request
+  type: object
+  properties:
+    rut:
+      type: string
+consultaEstadoONTResponse:
+  title: Consulta Estado Set Top Box Response
+  type: object
+  properties:
+    data:
+      type: object

@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: Consultar Estado del ONT y Estado de Red
+  description: >-
+    API para Consultar el Estado del ONT y el Estado de Red. Proyecto IPTV-VTR 
+  contact:
+    name: jose.herrera@haibu.cl
+  license:
+    name: MIT
+basePath: /v1/consultaEstadoONT
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+definitions:
+security:
+  - api_key: []
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"

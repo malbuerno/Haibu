@@ -1,0 +1,35 @@
+healthResponse:
+  title: Health Response
+  type: object
+  properties:
+    node-version:
+      type: string
+    memory:
+      type: object
+      properties:
+        rss:
+          type: integer
+          format: int64
+        heapTotal:
+          type: integer
+          format: int64
+        heapUsed:
+          type: integer
+          format: int64
+        external:
+          type: integer
+          format: int64
+    pid:
+      type: integer
+      format: int32
+    uptime:
+      type: number
+      format: float
+    environment:
+      type: string
+    appName:
+      type: string
+    appVersion:
+      type: string
+    hostname:
+      type: string

@@ -1,0 +1,17 @@
+/activosSiebel/metrics:
+  get:
+    tags:
+      - Metrics
+    description: Get metrics from applications
+    x-oai-middleware:
+      - file: metrics
+        handler: getMetrics
+    responses:
+      200:
+        description: Successful response
+        schema:
+          $ref: '#/definitions/metricsResponse'
+      default:
+        description: Unexpected error
+        schema:
+          $ref: '#/definitions/error'

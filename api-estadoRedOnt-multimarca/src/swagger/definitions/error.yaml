@@ -1,0 +1,23 @@
+error:
+  title: Error Response
+  type: object
+  properties:
+    title:
+      type: string
+    actionType:
+      type: string
+    extra:
+      type: string
+    message:
+      type: string
+    buttons:
+      type: array
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+          cssClass:
+            type: string
+    icon:
+      type: string

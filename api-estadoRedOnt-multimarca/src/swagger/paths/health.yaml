@@ -1,0 +1,17 @@
+/activosSiebel/health:
+  get:
+    tags:
+      - Health
+    description: Get health from applications
+    x-oai-middleware:
+      - file: health
+        handler: getHealth
+    responses:
+      200:
+        description: Successful response
+        schema:
+          $ref: '#/definitions/healthResponse'
+      default:
+        description: Unexpected error
+        schema:
+          $ref: '#/definitions/error'

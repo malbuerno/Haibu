@@ -1,0 +1,7 @@
+APP:
+  SERVICE_NAME: 'activosSiebel'
+
+  LOGGER:
+    LEVEL: debug
+  SOA:
+    BASE_URL: 'http://osbcorpqa.vtr.cl:8000/consultaActivosInstaladosSiebel?wsdl'

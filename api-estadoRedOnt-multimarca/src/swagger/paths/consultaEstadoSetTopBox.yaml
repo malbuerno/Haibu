@@ -1,0 +1,27 @@
+/consultaEstadoONT:
+  post:
+    description: 'Método Para Consultar Estado ONT'
+    operationId: 'consultaEstadoONT'
+    produces:
+      - 'application/json'
+    tags:
+      - consultaEstadoONT
+    x-oai-middleware:
+      - file: controller
+        handler: consultaEstadoONT
+    parameters:
+      - in: body
+        name: body
+        description: Input object
+        required: true
+        schema:
+          $ref: '#/definitions/consultaEstadoONTRequest'
+    responses:
+      200:
+        description: Operation successful
+        schema:
+          $ref: '#/definitions/consultaEstadoONTResponse'
+      404:
+        description: Error operation
+        schema:
+          $ref: '#/definitions/error'

@@ -1,0 +1,12 @@
+APP:
+  HOST: 'localhost'
+  PORT: 3000 
+  BASE_PATH: 'dev/v1/consultaEstadoONT'
+
+  DEBUG: 'koa*'
+
+  LOGGER:
+    LEVEL: error
+  SOA:
+    BASE_URL: 'http://osbcorpqa.vtr.cl:8000/consultarCPESporCliente?wsdl'
+    SECOND_URL: 'http://osbcorpqa.vtr.cl:8000/medicionNivelesCROSS?wsdl'

@@ -1,0 +1,12 @@
+APP:
+  HOST: 'poquis.vtr.cl'
+  PORT: 3081
+  BASE_PATH: 'v1/consultaEstadoONT'
+
+  DEBUG: ''
+
+  LOGGER:
+    LEVEL: error
+  SOA:
+    BASE_URL: 'http://osbcorpqa.vtr.cl:8000/consultarCPESporClienteConvergente?wsdl'
+    SECOND_URL: 'http://osbcorpqa.vtr.cl:8000/medicionNivelesCROSS?wsdl'
