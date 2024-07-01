@@ -18,7 +18,7 @@ module.exports = (app) => {
     try {
       const resp = await repository.obtenerModelo();
       console.log("RESPUESTA BBDD A <SELECT * FROM BEC_ANDES.BECT_PARAMETRO where nombre = 'MODELO_ROUTER'>");
-      return { status: 200, body: {respuesta: resp } };
+      return { status: 200, body: { respuesta: resp } };
     } catch (e) {
       return { status: 500, body: { ejecucionExitosa: false, error: "El equipo de internet no tiene datos asociados!" } };
     }
@@ -27,7 +27,9 @@ module.exports = (app) => {
   async function insertarTrazaDesbloqueo() {
     try {
       const resp = await repository.registrarTrazaDBox();
-      console.log("RESPUESTA DE BBDD A <Insert into BEC_ANDES.BECT_DESBLOQUEO_TRAZA(USUARIO_CRM,RUT_CLIENTE,SERIE_DBOX,ACCION,FECHA,HORA=values('rarivast','10378564-4','E77MGG345234567','Desbloqueo/Unlock',to_date('18-06-24','DD-MM-RR'=,'17:31')>");
+      console.log(
+        "RESPUESTA DE BBDD A <Insert into BEC_ANDES.BECT_DESBLOQUEO_TRAZA(USUARIO_CRM,RUT_CLIENTE,SERIE_DBOX,ACCION,FECHA,HORA=values('rarivast','10378564-4','E77MGG345234567','Desbloqueo/Unlock',to_date('18-06-24','DD-MM-RR'=,'17:31')>"
+      );
       return { status: 200, body: { respuesta: resp } };
     } catch (e) {
       return { status: 500, body: { ejecucionExitosa: false, error: "El cliente no existe o no tiene paquetes asociados" } };

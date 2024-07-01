@@ -1,5 +1,5 @@
-const swagger = require('./swagger');
+const swagger = require("./swagger");
 
-module.exports = app => {
+module.exports = (app) => {
   swagger(app);
 };

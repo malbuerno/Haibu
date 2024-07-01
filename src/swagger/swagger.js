@@ -1,26 +1,26 @@
-const nconf = require('nconf');
-const Router = require('koa-oai-router');
-const middleware = require('koa-oai-router-middleware');
+const nconf = require("nconf");
+const Router = require("koa-oai-router");
+const middleware = require("koa-oai-router-middleware");
 
-module.exports = app => {
+module.exports = (app) => {
   const { PORT, HOST, BASE_PATH } = app.context.config;
-  console.log('basepath: ', BASE_PATH);
-  const hostname = [HOST, PORT].join(':');
+  console.log("basepath: ", BASE_PATH);
+  const hostname = [HOST, PORT].join(":");
   const swagger = new Router({
     BASE_PATH,
     apiDoc: __dirname,
-    apiExplorerVisible: nconf.get('NODE_ENV') == 'production',
+    apiExplorerVisible: nconf.get("NODE_ENV") == "production",
     options: {
-      middleware: './src/controllers',
-      BASE_PATH
+      middleware: "./src/controllers",
+      BASE_PATH,
     },
     apiCooker(api) {
       api.host = hostname;
-      if (nconf.get('NODE_ENV') !== 'production') {
+      if (nconf.get("NODE_ENV") !== "production") {
         api.basePath = `/${BASE_PATH}`;
       }
       return api;
-    }
+    },
   });
   swagger.mount(middleware);
 

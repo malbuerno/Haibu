@@ -1,3 +1,2 @@
-metricsResponse:
-  title: Metrics
-  type: object
+metricsResponse: title: Metrics;
+type: object;

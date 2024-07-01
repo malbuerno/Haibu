@@ -1,5 +1,5 @@
-const timer = require('./timer');
+const timer = require("./timer");
 
-module.exports = app => {
+module.exports = (app) => {
   timer(app);
 };
