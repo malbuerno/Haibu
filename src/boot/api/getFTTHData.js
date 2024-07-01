@@ -14,6 +14,16 @@ module.exports = (app) => {
     }
   }
 
+  async function solicitudModeloDB() {
+    try {
+      const resp = await repository.obtenerModelo();
+      console.log("RESPUESTA BBDD A <SELECT * FROM BEC_ANDES.BECT_PARAMETRO where nombre = 'MODELO_ROUTER'>");
+      return { status: 200, body: {respuesta: resp } };
+    } catch (e) {
+      return { status: 500, body: { ejecucionExitosa: false, error: "El equipo de internet no tiene datos asociados!" } };
+    }
+  }
+
   async function insertarTrazaDesbloqueo() {
     try {
       const resp = await repository.registrarTrazaDBox();
@@ -297,5 +307,6 @@ module.exports = (app) => {
     consultarPlataformaGiapClaroVTR,
     solicitudDummyDB,
     insertarTrazaDesbloqueo,
+    solicitudModeloDB,
   };
 };

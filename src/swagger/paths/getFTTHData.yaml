@@ -46,6 +46,27 @@
         schema:
           $ref: "#/definitions/error"
 
+/consultarModelo:
+  get:
+    description: "Consultar modelo de equipo internet"
+    operationId: "solicitudModeloDB"
+    produces:
+      - "application/json"
+    tags:
+      - solicitudModeloDB
+    x-oai-middleware:
+      - file: controller
+        handler: solicitudModeloDB
+    responses:
+      200:
+        description: Operation successful
+        schema:
+          $ref: "#/definitions/consultarClaroVTRResponse"
+      404:
+        description: Error operation
+        schema:
+          $ref: "#/definitions/error"
+
 /insertarTrazaDesbloqueo:
   post:
     description: "Insertar Traza de Bloqueo DBOX"

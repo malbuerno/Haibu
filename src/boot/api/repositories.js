@@ -54,6 +54,51 @@ module.exports = app => {
     });
   }
 
+  async function obtenerModelo() {
+    return new Promise((resolve, reject) => {
+      (async () => {
+        let connection;
+        let resultadoQuery;
+        try {
+          connection = await oracledb.getConnection({
+            user: BD.USERDB,
+            password: BD.USERPASS,
+            connectString: BD.CONNECTSTRING
+          });
+          console.log("Successfully connected to Oracle!")
+          resultadoQuery = await connection.execute(`SELECT * FROM BEC_ANDES.BECT_PARAMETRO`, [], { outFormat: oracledb.OBJECT });
+          if (resultadoQuery.rows.length == 0) {
+            console.log("Query no retorna Resultado");
+            resolve(resultadoQuery.rows);
+          } else {
+            console.log("Query OK");
+            resolve(resultadoQuery.rows);
+          }
+        } catch (err) {
+          console.log("Error: ", err);
+        } finally {
+          if (connection) {
+            try {
+              await connection.close();
+            } catch (err) {
+              console.log("Error when closing the database connection: ", err);
+            }
+          }
+        }
+      })().catch(e => {
+        console.log(e);
+        let response = {
+          code: 500,
+          respuesta: { "error": "error" },
+          messaje: "error function  obtenerPlataforResponse"
+        }
+        return reject(response);
+      });
+
+    });
+  }
+
+
   async function registrarTrazaDBox() {
     return new Promise((resolve, reject) => {
       (async () => {
@@ -394,6 +439,7 @@ values (null,'12505823-K',null,null,null,null)`;
     requestActivosSiebel,
     obtenerPlataforResponse,
     registrarTrazaDBox,
+    obtenerModelo,
   };
 };
 

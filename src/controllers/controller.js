@@ -29,4 +29,13 @@ module.exports = {
     response.body = body;
     response.type = 'application/json';
   },
+  solicitudModeloDB: async ({ response, request, api }) => {
+    console.log(request.body);
+    const { status, body } = await api.getFTTHData.solicitudModeloDB().catch(error => {
+      console.error('Muestra, Compara Modelo Equipo Internet: ', error);
+    });
+    response.status = status;
+    response.body = body;
+    response.type = 'application/json';
+  },  
 };
